@@ -54,6 +54,9 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  # Sets the default host and port for URL generation (e.g. Active Storage) 
+  Rails.application.routes.default_url_options = { host: "localhost", port: 3000 }
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
