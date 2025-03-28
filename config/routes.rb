@@ -6,10 +6,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :maps, only: [:index, :show, :create,:update,:destroy] do
-      get 'locations', to: 'locations#index_by_map'
+      get  'locations', to: 'locations#index_by_map'
+      post 'locations', to: 'locations#create_for_map'
     end
 
-    resources :locations, only: [:index, :show, :create, :update, :destroy]
-    resources :aspects, only: [:index, :show, :create, :update, :destroy]
+    # resources :locations, only: [:index, :show, :create, :update, :destroy]
+    # resources :aspects, only: [:index, :show, :create, :update, :destroy]
   end
 end
